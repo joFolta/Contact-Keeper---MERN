@@ -1,10 +1,11 @@
 {
   "name": "contact-keeper-MERN",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Contact manager app",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,17 @@
   "bugs": {
     "url": "https://github.com/joFolta/Contact-Keeper---MERN/issues"
   },
-  "homepage": "https://github.com/joFolta/Contact-Keeper---MERN#readme"
+  "homepage": "https://github.com/joFolta/Contact-Keeper---MERN#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.10"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.3"
+  }
 }
