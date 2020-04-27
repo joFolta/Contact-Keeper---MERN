@@ -6,3 +6,6 @@ node_modules
 
 # Ignore files related to API keys
 .env
+
+# Ignore config's default.json which holds the MongoDB cluster's ID and PWD
+default.json
