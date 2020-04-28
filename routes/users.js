@@ -14,7 +14,7 @@ const User = require("../models/User");
 router.post(
   "/",
   [
-    check("name", "Pleace add name").not().isEmpty(),
+    check("name", "Pleace add name").not().isEmpty(), // express-validator
     check("email", "Please include a valid email").isEmail(),
     check(
       "password",
@@ -29,7 +29,7 @@ router.post(
       .withMessage("Must contain a number"),
   ],
   async (req, res) => {
-    const errors = validationResult(req);
+    const errors = validationResult(req); // express-validator
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
