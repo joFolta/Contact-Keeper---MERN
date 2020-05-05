@@ -14,7 +14,7 @@ const User = require("../models/User");
 router.post(
   "/",
   [
-    check("name", "Pleace add name").not().isEmpty(), // express-validator
+    check("name", "Please add name").not().isEmpty(), // express-validator
     check("email", "Please include a valid email").isEmail(),
     check(
       "password",
@@ -55,6 +55,7 @@ router.post(
 
       await user.save();
 
+      // JWT payload
       const payload = {
         user: {
           id: user.id,
