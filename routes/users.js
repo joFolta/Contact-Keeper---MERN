@@ -29,7 +29,8 @@ router.post(
       .withMessage("Must contain a number"),
   ],
   async (req, res) => {
-    const errors = validationResult(req); // express-validator
+    // express-validator
+    const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
