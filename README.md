@@ -3,6 +3,9 @@
 ![Preview](public/img/postman.png)
 *ℹ️Testing routes with Postman*
 
+## Run the app
+- `npm run dev`
+
 ### Back-End
 - `npm i express bcryptjs jsonwebtoken config express-validator mongoose`
 - `npm i -D nodemon concurrently`
