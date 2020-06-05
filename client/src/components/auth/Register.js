@@ -2,20 +2,25 @@ import React, { useState, useContext, useEffect } from "react";
 import AlertContext from "../../context/alert/alertContext";
 import AuthContext from "../../context/auth/authContext";
 
-const Register = () => {
+const Register = (props) => {
   const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
 
   const { setAlert } = alertContext;
-  const { register, error, clearErrors } = authContext;
+  const { register, error, clearErrors, isAuthenticated } = authContext;
 
   useEffect(() => {
-    // useEffect b/c {error} changing is a side effect (outside of scope of Register component, not a pure component)
+    // useEffect b/c {isAuthenticated} and {error} changes are side effects (outside of scope of Register component, not a pure component)
+    if (isAuthenticated) {
+      props.history.push("/"); // redirect to homepage
+    }
+
     if (error === "User already exists") {
       setAlert(error, "danger");
       clearErrors(); // remove error after setting alert
     }
-  }, [error]);
+    // eslint-disable-next-line
+  }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
     name: "",
