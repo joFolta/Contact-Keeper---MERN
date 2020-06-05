@@ -6,12 +6,21 @@ import {
   UPDATE_CONTACT,
   FILTER_CONTACTS,
   CLEAR_FILTER,
+  CONTACT_ERROR,
 } from "../types";
 
 export default (state, action) => {
   switch (action.type) {
     case ADD_CONTACT:
-      return { ...state, contacts: [...state.contacts, action.payload] };
+      return {
+        ...state,
+        contacts: [...state.contacts, action.payload],
+      };
+    case CONTACT_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+      };
     case UPDATE_CONTACT:
       return {
         ...state,
