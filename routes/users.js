@@ -71,7 +71,7 @@ router.post(
         },
         (err, token) => {
           if (err) throw err;
-          res.json({ token });
+          res.json({ token }); // returns token inside payload (payload.token)
         }
       );
     } catch (err) {
