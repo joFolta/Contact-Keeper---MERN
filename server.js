@@ -11,10 +11,6 @@ connectDB();
 // Init Middleware (allows us to POST req.body)
 app.use(express.json({ extended: false })); // 3rd party package bodyparser, now included in express
 
-app.get("/", (req, res) =>
-  res.json({ msg: "Welcome to the ContactKeeper API" })
-);
-
 // Define Routes
 app.use("/api/users", require("./routes/users"));
 app.use("/api/auth", require("./routes/auth"));
