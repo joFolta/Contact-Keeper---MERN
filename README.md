@@ -8,7 +8,7 @@
 ## Build the app
 - `npm run build` (from client folder) <!-- create production build; would need to do this everytime we want to deploy -->
 ### OR.... we can do a post-build on the server, after we deploy
-- add this script to top-level (server) package.json: `"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install -- prefix client && npm run build -- prefix client"`
+- add this script to top-level (server) package.json: `"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"`
 <!-- temporary turn off production; and for client: install dependencies and run build -->
 - `heroku login` (from root)
 - `heroku create` <!-- creates a heroku subdomain with a funny name -->
