@@ -26,5 +26,5 @@
 ## Extra Info
 - within `README.md` hidden comments
 
+## Testing routes with Postman
 ![Preview](public/img/postman.png)
-*ℹ️Testing routes with Postman*
