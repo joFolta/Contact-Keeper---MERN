@@ -1,15 +1,14 @@
-// Using CommonJS's require (can't ES6 import like in React)
 const express = require("express");
 const connectDB = require("./config/db");
-const path = require("path"); // the default NodeJS path module
+const path = require("path");
 
 const app = express();
 
 // Connect Database
 connectDB();
 
-// Init Middleware (allows us to POST req.body)
-app.use(express.json({ extended: false })); // 3rd party package bodyparser, now included in express
+// Init Middleware
+app.use(express.json({ extended: false }));
 
 // Define Routes
 app.use("/api/users", require("./routes/users"));
@@ -23,10 +22,9 @@ if (process.env.NODE_ENV === "production") {
 
   app.get("*", (req, res) =>
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
-  ); // * is anything, that is not the above ("/api/users", "/api/auth", "/api/contacts")
-  // open index.html
+  );
 }
 
-const PORT = process.env.PORT || 5000; // process.env.PORT for PROD
+const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}...`));
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
