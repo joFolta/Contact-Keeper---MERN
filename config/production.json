@@ -2,3 +2,5 @@
   "mongoURI": "mongodb+srv://johann123:johann123@contactkeeper-zxtll.mongodb.net/test?retryWrites=true&w=majority",
   "jwtSecret": "madeUpJWTsEcReT6420"
 }
+
+// normally different secrets and API from dev VS. production
